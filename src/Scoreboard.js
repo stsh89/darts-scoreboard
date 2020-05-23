@@ -9,6 +9,16 @@ export default function Scoreboard() {
   const [scoreInputPlaceholder, setScoreInputPlaceholder] = React.useState('Player1 score')
   const [scoreInputValue, setScoreInputValue] = React.useState('')
 
+  const playerScores = player1ScoreList.map((score, index) => {
+    return (
+      <tr key={`scoreRow-${index}`}>
+        <td>{index + 1}</td>
+        <td>{score}</td>
+        <td>{player2ScoreList[index]}</td>
+      </tr>
+    )
+  })
+
   const numberButtonClick = (value) => {
     setScoreInputValue(`${scoreInputValue}${value}`)
   }
@@ -116,6 +126,14 @@ export default function Scoreboard() {
       <div className="button-group">
         <button className="button button--enter" onClick={enterButtonClick}>&#9166;</button>
       </div>
+      <table className="scores-table">
+        <thead>
+          <tr><td>#</td><td>Player1 score</td><td>Player2 score</td></tr>
+        </thead>
+        <tbody>
+          {playerScores}
+        </tbody>
+      </table>
     </div>
   )
 }
