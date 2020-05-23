@@ -6,21 +6,29 @@ export default function Scoreboard() {
   const [player1ScoreList, setPlayer1ScoreList] = React.useState([])
   const [player2ScoreList, setPlayer2ScoreList] = React.useState([])
   const [turn, setTurn] = React.useState('player1')
-  const [scoreInputLabel, setScoreInputLabel] = React.useState('Player1')
+  const [scoreInputPlaceholder, setScoreInputPlaceholder] = React.useState('Player1 score')
   const [scoreInputValue, setScoreInputValue] = React.useState('')
 
   const numberButtonClick = (value) => {
     setScoreInputValue(`${scoreInputValue}${value}`)
   }
 
-  const numberButtons = [1,2,3,4,5,6,7,8,9,0].map((value) => {
+  const numberButtons = [[1,2,3,4,5],[6,7,8,9,0]].map((group, index) => {
+    const buttonGroup = group.map((value) => {
+      return (
+        <button
+          className="button button--number"
+          key={`numberButton-${value}`}
+          onClick={numberButtonClick.bind(this, value)}>
+          {value}
+        </button>
+      )
+    })
+
     return (
-      <button
-        className="button button--number"
-        key={`numberButton-${value}`}
-        onClick={numberButtonClick.bind(this, value)}>
-        {value}
-      </button>
+      <div className="button-group" key={`numberGroup-${index}`}>
+        {buttonGroup}
+      </div>
     )
   })
 
@@ -46,7 +54,7 @@ export default function Scoreboard() {
     setPlayer2Score(301)
     setPlayer2ScoreList([])
     setTurn('player1')
-    setScoreInputLabel('Player1')
+    setScoreInputPlaceholder('Player1 score')
     setScoreInputValue('')
   }
 
@@ -60,14 +68,14 @@ export default function Scoreboard() {
         player1ScoreList.push(score)
         setPlayer1ScoreList(player1ScoreList)
         setTurn('player2')
-        setScoreInputLabel('Player2')
+        setScoreInputPlaceholder('Player2 score')
         setPlayer1Score(player1Score - score)
         break
       case 'player2':
         player2ScoreList.push(score)
         setPlayer2ScoreList(player2ScoreList)
         setTurn('player1')
-        setScoreInputLabel('Player1')
+        setScoreInputPlaceholder('Player1 score')
         setPlayer2Score(player2Score - score)
         break
     }
@@ -84,7 +92,7 @@ export default function Scoreboard() {
   return (
     <div className="scoreboard">
       <div className="game-menu">
-        <button className="button button--reset" onClick={reset}>Reset</button>
+        <button className="button button--reset" onClick={reset}>&#x21bb;</button>
       </div>
       <div className="score">
         <span className="score__player1">{player1Score}</span>
@@ -92,7 +100,6 @@ export default function Scoreboard() {
         <span className="score__player2">{player2Score}</span>
       </div>
       <div className="score-input">
-        <label htmlFor="scoreInput" className="score-input__label">{scoreInputLabel}</label>
         <input
           id="scoreInput"
           type="text"
@@ -100,15 +107,14 @@ export default function Scoreboard() {
           onKeyDown={setScore}
           value={scoreInputValue}
           onChange={updateScore}
+          placeholder={scoreInputPlaceholder}
           autoFocus="on"
         />
+        <button className="button button--remove" onClick={removeButtonClick}>&larr;</button>
       </div>
-      <div className="button-groups">
-        <div className="number-buttons-group">{numberButtons}</div>
-        <div className="control-buttons-group">
-          <button className="button button--remove" onClick={removeButtonClick}>Remove</button>
-          <button className="button button--enter" onClick={enterButtonClick}>Enter</button>
-        </div>
+      {numberButtons}
+      <div className="button-group">
+        <button className="button button--enter" onClick={enterButtonClick}>&#9166;</button>
       </div>
     </div>
   )

@@ -1,20 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-}
-
 .scoreboard {
-  background-color: #2d2d2d;
-  color: #dadee0;
-  min-height: 100vh;
   padding: 1em;
 }
 
 .score {
   display: flex;
   justify-content: center;
-  margin-top: 0.5em;
+  margin-top: 3em;
   font-weight: lighter;
 }
 
@@ -31,27 +22,23 @@
 
 .score__separator {
   font-size: 4em;
-} 
+}
 
 .score-input {
   display: flex;
-  flex-direction: column;
   margin-top: 2em;
 }
 
-.score-input__label {
-  font-size: 1.5em;
-}
-
 .score-input__value {
-  padding: 0.5em;
-  font-size: 2em;
+  width: 100%;
+  padding-left: 0.5em;
+  font-size: 1em;
   border: none;
   background-image: none;
   background-color: #80436b;
   box-shadow: none;
   color: #dadee0;
-  margin-top: 0.2em;
+  font-weight: bold;
 }
 
 .game-menu {
@@ -59,20 +46,10 @@
   flex-direction: row-reverse;
 }
 
-.button-groups {
-}
-
-.number-buttons-group {
+.button-group {
   display: flex;
-  flex-wrap: wrap;
   margin-top: 2em;
   justify-content: space-between;
-}
-
-.control-buttons-group {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2em;
 }
 
 .button {
@@ -85,23 +62,25 @@
 }
 
 .button--reset {
-  padding: 0.5em;
-  font-size: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 2.3em;
+  height: 2.3em;
 }
 
 .button--number {
   width: 2.3em;
   height: 2.3em;
-  margin: 0.1em;
 }
 
 .button--remove {
   height: 2.3em;
-  width: 100%;
+  width: 20%;
+  font-size: 2em;
+  text-align: right;
 }
 
 .button--enter {
   height: 2.3em;
   width: 100%;
-  margin-left: 0.1em;
 }
