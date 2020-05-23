@@ -9,21 +9,26 @@ export default function Scoreboard() {
   const [scoreInputLabel, setScoreInputLabel] = React.useState('Player1')
   const [scoreInputValue, setScoreInputValue] = React.useState('')
 
-  const numberControlClick = (value) => {
+  const numberButtonClick = (value) => {
     setScoreInputValue(`${scoreInputValue}${value}`)
   }
 
-  const numberControls = [1,2,3,4,5,6,7,8,9,0].map((value) => {
+  const numberButtons = [1,2,3,4,5,6,7,8,9,0].map((value) => {
     return (
-      <button key={`control-${value}`} onClick={numberControlClick.bind(this, value)}>{value}</button>
+      <button
+        className="button button--number"
+        key={`numberButton-${value}`}
+        onClick={numberButtonClick.bind(this, value)}>
+        {value}
+      </button>
     )
   })
 
-  const removeControlClick = () => {
+  const removeButtonClick = () => {
     setScoreInputValue(scoreInputValue.substring(0, scoreInputValue.length - 1))
   }
 
-  const enterControlClick = () => {
+  const enterButtonClick = () => {
     changeTurnWithGuard()
   }
 
@@ -78,26 +83,31 @@ export default function Scoreboard() {
 
   return (
     <div className="scoreboard">
-      <button onClick={reset}>Reset</button>
+      <div className="game-menu">
+        <button className="button button--reset" onClick={reset}>Reset</button>
+      </div>
       <div className="score">
-        <span>{player1Score}</span>
+        <span className="score__player1">{player1Score}</span>
         <span>:</span>
-        <span>{player2Score}</span>
+        <span className="score__player2">{player2Score}</span>
       </div>
       <div className="score-input">
-        <label htmlFor="scoreInput">{scoreInputLabel}</label>
+        <label htmlFor="scoreInput" className="score-input__label">{scoreInputLabel}</label>
         <input
           id="scoreInput"
           type="number"
+          className="score-input__value"
           onKeyDown={setScore}
           value={scoreInputValue}
           onChange={updateScore}
         />
       </div>
-      <div className="controls">
-        {numberControls}
-        <button onClick={removeControlClick}>Remove</button>
-        <button onClick={enterControlClick}>Enter</button>
+      <div className="button-groups">
+        <div className="number-buttons-group">{numberButtons}</div>
+        <div className="control-buttons-group">
+          <button className="button button--remove" onClick={removeButtonClick}>Remove</button>
+          <button className="button button--enter" onClick={enterButtonClick}>Enter</button>
+        </div>
       </div>
     </div>
   )
