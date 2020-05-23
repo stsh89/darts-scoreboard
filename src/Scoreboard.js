@@ -95,11 +95,12 @@ export default function Scoreboard() {
         <label htmlFor="scoreInput" className="score-input__label">{scoreInputLabel}</label>
         <input
           id="scoreInput"
-          type="number"
+          type="text"
           className="score-input__value"
           onKeyDown={setScore}
           value={scoreInputValue}
           onChange={updateScore}
+          autoFocus="on"
         />
       </div>
       <div className="button-groups">

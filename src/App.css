@@ -3,11 +3,18 @@
   padding: 0;
 }
 
+.scoreboard {
+  background-color: #2d2d2d;
+  color: #dadee0;
+  min-height: 100vh;
+}
+
 .score {
   display: flex;
   justify-content: center;
-  font-size: 3em;
+  font-size: 4em;
   margin-top: 1em;
+  font-weight: lighter;
 }
 
 .score__player1 {
@@ -26,12 +33,18 @@
 }
 
 .score-input__label {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .score-input__value {
   padding: 0.5em;
   font-size: 2em;
+  border: none;
+  background-image: none;
+  background-color: #80436b;
+  box-shadow: none;
+  color: #dadee0;
+  margin-top: 0.2em;
 }
 
 .game-menu {
@@ -56,11 +69,17 @@
 }
 
 .button {
+  color: #dadee0;
   font-size: 1.5em;
+  background-color: #80436b;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
 }
 
 .button--reset {
   margin: 1em;
+  padding: 0.5em;
   font-size: 1em;
 }
 
