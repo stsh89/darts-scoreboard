@@ -88,7 +88,7 @@ export default function Scoreboard() {
       </div>
       <div className="score">
         <span className="score__player1">{player1Score}</span>
-        <span>:</span>
+        <span className="score__separator">:</span>
         <span className="score__player2">{player2Score}</span>
       </div>
       <div className="score-input">
