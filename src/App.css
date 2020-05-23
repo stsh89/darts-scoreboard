@@ -1,12 +1,14 @@
 * {
   margin: 0;
   padding: 0;
+  font-size: 14px;
 }
 
 .scoreboard {
   background-color: #2d2d2d;
   color: #dadee0;
   min-height: 100vh;
+  margin: 1em;
 }
 
 .score {
@@ -29,7 +31,7 @@
 .score-input {
   display: flex;
   flex-direction: column;
-  margin: 2em;
+  margin-top: 2em;
 }
 
 .score-input__label {
@@ -58,14 +60,14 @@
 .number-buttons-group {
   display: flex;
   flex-wrap: wrap;
-  margin: 2em;
+  margin-top: 2em;
   justify-content: space-between;
 }
 
 .control-buttons-group {
   display: flex;
   justify-content: space-between;
-  margin: 2em;
+  margin-top: 2em;
 }
 
 .button {
@@ -78,7 +80,6 @@
 }
 
 .button--reset {
-  margin: 1em;
   padding: 0.5em;
   font-size: 1em;
 }
