@@ -14,17 +14,18 @@
 .score {
   display: flex;
   justify-content: center;
-  font-size: 4em;
   margin-top: 0.5em;
   font-weight: lighter;
 }
 
 .score__player1 {
+  font-size: 3em;
   width: 33%;
   text-align: right;
 }
 
 .score__player2 {
+  font-size: 3em;
   width: 33%;
 }
 
