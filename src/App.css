@@ -19,15 +19,19 @@
 }
 
 .score__player1 {
-  font-size: 3em;
+  font-size: 4em;
   width: 33%;
   text-align: right;
 }
 
 .score__player2 {
-  font-size: 3em;
+  font-size: 4em;
   width: 33%;
 }
+
+.score__separator {
+  font-size: 4em;
+} 
 
 .score-input {
   display: flex;
