@@ -43,6 +43,7 @@ export default function Scoreboard() {
       return (
         <button
           className={styles.numberButton}
+          data-e2e={`numberButton${value}`}
           key={`numberButton-${value}`}
           onClick={numberButtonClick.bind(this, value)}>
           {value}
@@ -117,29 +118,31 @@ export default function Scoreboard() {
   return (
     <div className={styles.scoreboard}>
       <div className={styles.gameMenu}>
-        <button className={styles.resetButton} onClick={reset}>&#x21bb;</button>
+        <button className={styles.resetButton} data-e2e="resetButton" onClick={reset}>&#x21bb;</button>
       </div>
       <div className={styles.score}>
-        <span className={styles.player1Score}>{player1Score}</span>
+        <span className={styles.player1Score} data-e2e="player1Score">{player1Score}</span>
         <span className={styles.scoreSeparator}>:</span>
-        <span className={styles.player2Score}>{player2Score}</span>
+        <span className={styles.player2Score} data-e2e="player2Score">{player2Score}</span>
       </div>
       <div className={styles.scoreInput}>
         <input
-          id="scoreInput"
           type="text"
           className={styles.scoreInputValue}
+          data-e2e="scoreInputValue"
           onKeyDown={setScore}
           value={scoreInputValue}
           onChange={updateScore}
           placeholder={scoreInputPlaceholder}
-          autoFocus="on"
         />
-        <button className={styles.removeButton} onClick={removeButtonClick}>&larr;</button>
+        <button className={styles.removeButton} data-e2e="removeButton" onClick={removeButtonClick}>&larr;</button>
       </div>
       {numberButtons}
       <div className={styles.buttonGroup}>
-        <button className={styles.enterButton} onClick={enterButtonClick}>&#9166;</button>
+        <button
+          className={styles.enterButton}
+          data-e2e="enterButton"
+          onClick={enterButtonClick}> &#9166;</button>
       </div>
       {scoreTable}
       <footer className={styles.footer}>
