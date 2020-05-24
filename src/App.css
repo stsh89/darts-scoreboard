@@ -1,5 +1,6 @@
 .scoreboard {
   padding: 1em;
+  color: var(--text-color);
 }
 
 .score {
@@ -35,10 +36,14 @@
   font-size: 1em;
   border: none;
   background-image: none;
-  background-color: #80436b;
+  background-color: #404345;
   box-shadow: none;
   color: #dadee0;
   font-weight: bold;
+}
+
+.score-input__value::placeholder {
+  color: var(--text-color);
 }
 
 .game-menu {
@@ -46,19 +51,19 @@
   flex-direction: row-reverse;
 }
 
+.button {
+  color: var(--text-color);
+  font-size: 1.5em;
+  background-color: #404345;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
 .button-group {
   display: flex;
   margin-top: 2em;
   justify-content: space-between;
-}
-
-.button {
-  color: #dadee0;
-  font-size: 1.5em;
-  background-color: #80436b;
-  box-shadow: 0px 0px 0px transparent;
-  border: 0px solid transparent;
-  text-shadow: 0px 0px 0px transparent;
 }
 
 .button--reset {

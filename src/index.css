@@ -1,6 +1,12 @@
+:root {
+  --bg-color: #2d2d2d;
+  --fg-color: #dadee0;
+  --text-color: #f8b682;
+}
+
 body {
-  background-color: #2d2d2d;
-  color: #dadee0;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
   margin: 0;
   padding: 0;
   font-size: 14px;
