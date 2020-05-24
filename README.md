@@ -1,6 +1,6 @@
 # Darts scoreboard
 
-Simple darts scoring solution allowing two player to enter their scores
+Simple darts scoring solution allowing two players to enter their scores
 
 ## Development
 
