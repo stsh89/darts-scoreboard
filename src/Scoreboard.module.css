@@ -3,6 +3,11 @@
   color: var(--text-color);
 }
 
+.gameMenu {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .score {
   display: flex;
   justify-content: center;
@@ -10,87 +15,86 @@
   font-weight: lighter;
 }
 
-.score__player1 {
+.player1Score {
   font-size: 4em;
   width: 33%;
   text-align: right;
 }
 
-.score__player2 {
+.player2Score {
   font-size: 4em;
   width: 33%;
 }
 
-.score__separator {
+.scoreSeparator {
   font-size: 4em;
 }
 
-.score-input {
+.scoreInput {
   display: flex;
   margin-top: 2em;
 }
 
-.score-input__value {
+.scoreInputValue {
   width: 100%;
   padding-left: 0.5em;
   font-size: 1em;
   border: none;
   background-image: none;
-  background-color: #404345;
+  background-color: var(--block-color);
   box-shadow: none;
   color: var(--text-color);
   font-weight: bold;
 }
 
-.score-input__value::placeholder {
+.scoreInputValue::placeholder {
   color: var(--text-color);
-}
-
-.game-menu {
-  display: flex;
-  flex-direction: row-reverse;
 }
 
 .button {
   color: var(--text-color);
   font-size: 1.5em;
-  background-color: #404345;
+  background-color: var(--block-color);
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
   text-shadow: 0px 0px 0px transparent;
 }
 
-.button-group {
-  display: flex;
-  margin-top: 2em;
-  justify-content: space-between;
-}
-
-.button--reset {
+.resetButton {
+  composes: button;
   font-size: 1.5em;
   font-weight: bold;
   width: 2.3em;
   height: 2.3em;
 }
 
-.button--number {
-  width: 2.3em;
-  height: 2.3em;
-}
-
-.button--remove {
+.removeButton {
+  composes: button;
   height: 2.3em;
   width: 20%;
   font-size: 2em;
   text-align: right;
 }
 
-.button--enter {
+.numberButton {
+  composes: button;
+  width: 2.3em;
+  height: 2.3em;
+}
+
+.enterButton {
+  composes: button;
   height: 2.3em;
   width: 100%;
 }
 
-.scores-table {
+.buttonGroup {
+  display: flex;
+  margin-top: 2em;
+  justify-content: space-between;
+}
+
+.scoresTable {
   margin-top: 2em;
   width: 100%;
 }

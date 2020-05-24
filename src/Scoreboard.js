@@ -1,4 +1,5 @@
 import * as React from 'react'
+import styles from './Scoreboard.module.css';
 
 export default function Scoreboard() {
   const [player1Score, setPlayer1Score] = React.useState(301)
@@ -22,7 +23,7 @@ export default function Scoreboard() {
   let scoreTable;
   if (player1ScoreList.length > 0) {
     scoreTable = (
-      <table className="scores-table">
+      <table className={styles.scoresTable}>
         <thead>
           <tr><td>#</td><td>Player1 score</td><td>Player2 score</td></tr>
         </thead>
@@ -41,7 +42,7 @@ export default function Scoreboard() {
     const buttonGroup = group.map((value) => {
       return (
         <button
-          className="button button--number"
+          className={styles.numberButton}
           key={`numberButton-${value}`}
           onClick={numberButtonClick.bind(this, value)}>
           {value}
@@ -50,7 +51,7 @@ export default function Scoreboard() {
     })
 
     return (
-      <div className="button-group" key={`numberGroup-${index}`}>
+      <div className={styles.buttonGroup} key={`numberGroup-${index}`}>
         {buttonGroup}
       </div>
     )
@@ -114,35 +115,35 @@ export default function Scoreboard() {
   }
 
   return (
-    <div className="scoreboard">
-      <div className="game-menu">
-        <button className="button button--reset" onClick={reset}>&#x21bb;</button>
+    <div className={styles.scoreboard}>
+      <div className={styles.gameMenu}>
+        <button className={styles.resetButton} onClick={reset}>&#x21bb;</button>
       </div>
-      <div className="score">
-        <span className="score__player1">{player1Score}</span>
-        <span className="score__separator">:</span>
-        <span className="score__player2">{player2Score}</span>
+      <div className={styles.score}>
+        <span className={styles.player1Score}>{player1Score}</span>
+        <span className={styles.scoreSeparator}>:</span>
+        <span className={styles.player2Score}>{player2Score}</span>
       </div>
-      <div className="score-input">
+      <div className={styles.scoreInput}>
         <input
           id="scoreInput"
           type="text"
-          className="score-input__value"
+          className={styles.scoreInputValue}
           onKeyDown={setScore}
           value={scoreInputValue}
           onChange={updateScore}
           placeholder={scoreInputPlaceholder}
           autoFocus="on"
         />
-        <button className="button button--remove" onClick={removeButtonClick}>&larr;</button>
+        <button className={styles.removeButton} onClick={removeButtonClick}>&larr;</button>
       </div>
       {numberButtons}
-      <div className="button-group">
-        <button className="button button--enter" onClick={enterButtonClick}>&#9166;</button>
+      <div className={styles.buttonGroup}>
+        <button className={styles.enterButton} onClick={enterButtonClick}>&#9166;</button>
       </div>
       {scoreTable}
-      <footer className="footer">
-        <a href="https://github.com/stsh89/darts-scoreboard" className="link">Source code</a>
+      <footer className={styles.footer}>
+        <a href="https://github.com/stsh89/darts-scoreboard" className={styles.link}>Source code</a>
       </footer>
     </div>
   )
