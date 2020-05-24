@@ -38,7 +38,7 @@
   background-image: none;
   background-color: #404345;
   box-shadow: none;
-  color: #dadee0;
+  color: var(--text-color);
   font-weight: bold;
 }
 
@@ -93,4 +93,14 @@
 .scores-table {
   margin-top: 2em;
   width: 100%;
+}
+
+.link {
+  color: var(--text-color);
+}
+
+.footer {
+  margin-top: 4em;
+  display: flex;
+  flex-direction: row-reverse;
 }

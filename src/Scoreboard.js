@@ -19,6 +19,20 @@ export default function Scoreboard() {
     )
   })
 
+  let scoreTable;
+  if (player1ScoreList.length > 0) {
+    scoreTable = (
+      <table className="scores-table">
+        <thead>
+          <tr><td>#</td><td>Player1 score</td><td>Player2 score</td></tr>
+        </thead>
+        <tbody>
+          {playerScores}
+        </tbody>
+      </table>
+    )
+  }
+
   const numberButtonClick = (value) => {
     setScoreInputValue(`${scoreInputValue}${value}`)
   }
@@ -126,14 +140,10 @@ export default function Scoreboard() {
       <div className="button-group">
         <button className="button button--enter" onClick={enterButtonClick}>&#9166;</button>
       </div>
-      <table className="scores-table">
-        <thead>
-          <tr><td>#</td><td>Player1 score</td><td>Player2 score</td></tr>
-        </thead>
-        <tbody>
-          {playerScores}
-        </tbody>
-      </table>
+      {scoreTable}
+      <footer className="footer">
+        <a href="https://github.com/stsh89/darts-scoreboard" className="link">Source code</a>
+      </footer>
     </div>
   )
 }
