@@ -122,7 +122,7 @@ export default function Scoreboard() {
       </div>
       <div className={styles.score}>
         <span className={styles.player1Score} data-e2e="player1Score">{player1Score}</span>
-        <span className={styles.scoreSeparator}>:</span>
+        <span className={styles.scoreSeparator}>-</span>
         <span className={styles.player2Score} data-e2e="player2Score">{player2Score}</span>
       </div>
       <div className={styles.scoreInput}>
