@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "dev": "BROWSER=none react-scripts start",
@@ -21,6 +21,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "cypress": "^4.6.0"
+    "cypress": "^15.10.0"
   }
 }
